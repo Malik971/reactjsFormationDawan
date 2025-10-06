@@ -1,26 +1,43 @@
-function hello() {
-  console.log("Malik Ibo");
-  
+// Fonction type "void" -> Elles ne retournent rien.
+function hello(){
+    console.log("Hello World !");
 }
 
+// Fontion qui retourne quelque chose :
 function helloName(name){
-  return "Hello " + name
+    return "Hello, " + name;
 }
 
-hello()
-const result = helloName("Malik le boss")
+hello();
+
+const result = helloName("Florian");
 console.log(result);
-console.log(helloName("2 fois"));
 
-const flechee = () => {
-  console.log("on est dans une flèche");
-   
+
+console.log("______________ fonctions fléchées _________________");
+
+const helloFleche = () => {
+    console.log("Hello World !");
+};
+
+const helloNameFleche = (name) => {
+    return "Hello, " + name;
 }
 
-const helloFlecheeName = (name) => "on est dans une flèche " + name
+helloFleche();
+const resultFleche = helloNameFleche("Toto");
+console.log(resultFleche);
 
+console.log("______________ Réécriture helloNameFleche _________________");
 
-flechee()
+const helloNameFleche2 = (name) => "Hello, " + name;
 
-console.log(helloFlecheeName('Malik'));
+const exp = () =>{
+    // Plusieurs instructions
+    // Puis le return
 
+    return "résultat !";
+}
+
+const resultFleche2 = helloNameFleche2("Bob");
+console.log(resultFleche2);
