@@ -1,30 +1,20 @@
 import "./App.css";
-import { ExercicesFruits } from "./components/ExercicesFruits";
-import Form from "./components/Form";
 import Home from "./components/home";
-import HookList from "./hooks/HookList";
-import HookUseStates from "./hooks/HookUseStates";
+import { BrowserRouter, Routes, Route } from "react-router-dom";
+import Navbar from "./components/Navbar";
+import Form from "./components/Form";
 
 function App() {
-  const title = "Bienvenue !";
-  const src = "../src/assets/react.svg";
-
-  const displayTitle = () => {
-    return <h1>Fonction display</h1>;
-  };
-
   return (
-    <>
-      <h1>{title}</h1>
-      <p>{title}</p>
-      {displayTitle()}
-      <img src={src} alt="image" />
-      {/* <Home />
-      <HookUseStates />
-      <HookList />
-      <Form /> */}
-      <ExercicesFruits />
-    </>
+      <BrowserRouter>
+      <Navbar />
+        <Routes>
+          <Route path="/" element={<h1>Accueil</h1>} />
+          <Route path="/ma-page" element={<Home />} />
+          <Route  path="/formulaire" element={<Form />} />
+          <Route path="*" element={<h1>Page 404 !</h1>} />
+        </Routes>
+      </BrowserRouter>
   );
 }
 
