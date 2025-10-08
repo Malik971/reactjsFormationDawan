@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom";
-
+import "../components/style/Navbar.css";
 
 export const Navbar = () => {
+  // Idée d'amélioration: extraire la liste des liens du HTML et la mettre ici
+  // (pour éviter d'avoir deux listes à gérer)
+
   return (
     <>
       {/* Version sans aucun style */}
@@ -15,7 +18,7 @@ export const Navbar = () => {
           <Link to="/Exercice-fruits-legumes"> Exercice</Link>
         </nav>
       </section> */}
- 
+
       <div className="navbar bg-base-100 shadow-sm">
         <div className="navbar-start">
           <div className="dropdown">
@@ -54,6 +57,9 @@ export const Navbar = () => {
               <li>
                 <Link to="/Exercice-fruits-legumes"> Exercice</Link>
               </li>
+              <li>
+                <Link to="/hook-use-effect">hook useEffect</Link>
+              </li>
             </ul>
           </div>
           <Link to="/" className="btn btn-ghost text-xl">
@@ -77,10 +83,10 @@ export const Navbar = () => {
             <li>
               <Link to="/Exercice-fruits-legumes"> Exercice</Link>
             </li>
+            <li>
+              <Link to="/hook-use-effect">hook useEffect</Link>
+            </li>
           </ul>
-        </div>
-        <div className="navbar-end">
-          <a className="btn">Button</a>
         </div>
       </div>
     </>
