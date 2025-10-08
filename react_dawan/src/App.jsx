@@ -1,5 +1,7 @@
 import "./App.css";
+import Form from "./components/Form";
 import Home from "./components/home";
+import HookList from "./hooks/HookList";
 import HookUseStates from "./hooks/HookUseStates";
 
 function App() {
@@ -18,6 +20,8 @@ function App() {
       <img src={src} alt="image" />
       <Home />
       <HookUseStates />
+      <HookList />
+      <Form />
     </>
   );
 }
