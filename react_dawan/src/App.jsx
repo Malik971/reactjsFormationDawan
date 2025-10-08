@@ -1,4 +1,5 @@
 import "./App.css";
+import { ExercicesFruits } from "./components/ExercicesFruits";
 import Form from "./components/Form";
 import Home from "./components/home";
 import HookList from "./hooks/HookList";
@@ -18,10 +19,11 @@ function App() {
       <p>{title}</p>
       {displayTitle()}
       <img src={src} alt="image" />
-      <Home />
+      {/* <Home />
       <HookUseStates />
       <HookList />
-      <Form />
+      <Form /> */}
+      <ExercicesFruits />
     </>
   );
 }
