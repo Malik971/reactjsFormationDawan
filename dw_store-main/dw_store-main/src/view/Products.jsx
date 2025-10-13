@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { useProducts } from "../hooks/useProduts";
+import { PaginationButton } from "../components/PaginationButton";
 import ProductCard from "../components/ProductCard";
 
 export const Products = () => {
@@ -10,6 +11,7 @@ export const Products = () => {
 
   const [responseApi, setResponseApi] = useState({
     page: 1,
+    pages: 0,
   });
 
   useEffect(() => {
@@ -17,10 +19,14 @@ export const Products = () => {
   }, [page]);
 
   const loadProducts = () => {
-    getPaginate(page, 5).then((resp) => {
+    getPaginate(page, 12).then((resp) => {
       setProducts(resp.data.data);
       setResponseApi(resp.data);
     });
+  };
+
+  const handleClickPagination = (buttonNumber) => {
+    setPage(buttonNumber);
   };
 
   return (
@@ -32,7 +38,7 @@ export const Products = () => {
         ))}
       </div>
 
-      <div className="w-1/4 m-auto">
+      <div className="w-fix m-auto mt-5">
         <button className="btn" onClick={() => setPage((prev) => prev - 1)}>
           précédent
         </button>
@@ -42,6 +48,12 @@ export const Products = () => {
         <button className="btn" onClick={() => setPage((prev) => prev + 1)}>
           suivant
         </button>
+      </div>
+      <div className="w-fit m-auto mt-5">
+        <PaginationButton
+          handleClick={handleClickPagination}
+          nbrButton={responseApi.pages}
+        />
       </div>
     </>
   );
